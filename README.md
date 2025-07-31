@@ -6,7 +6,6 @@
 <!-- 팀 소개: 왼쪽 정렬 -->
 <div align="left">
   
-
   <h3>✅ 팀 명</h3>
   <p><strong>SKN17-EDA-Mini-1Team : 🌸 산하엽(Skeleton Flower) 🌸</strong></p>
 
@@ -17,11 +16,6 @@
 | [김주서](https://github.com/kimjuseo71) | [홍문봉](https://github.com/Glowcloudy) | [양정민](https://github.com/Yangmin3) | [한 훈](https://github.com/Hoonieboogie) | [김주영](https://github.com/samkim7788) |
 |:--------------------------------------:|:--------------------------------------:|:-------------------------------------:|:---------------------------------------:|:---------------------------------------:|
 | <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397415348168294500/370391fd-2fe0-4a83-a79a-2e462210fb35.png?ex=6881a3f5&is=68805275&hm=07c0fcb9b46efe06fc254dc8afda222f6500183de06e7959a3b7749620a79c00" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1395586816832438434/1400378419052679258/resized_150x252.jpg?ex=688c6b88&is=688b1a08&hm=5bf0b83859037d36f9a104cec36f12661e1801e6e9a014e8f1dc599f576be489&" width="150" height="250">| <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397420134108499988/01f607c7-1561-4973-bf47-038a40ecd0f7.png?ex=6882f9ea&is=6881a86a&hm=ddbddf82df66befb38a0a710029e85c2784c04d990db359d23c21eb8240bad8d" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397424014686818425/3f02d83d-8363-45c2-9a5e-fd488063d006.png?ex=6881ac07&is=68805a87&hm=9af426f52fed283f64867cc1f8f25d4a35f2aa08d5af1feb96ca1c78db59efda" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1395586816832438434/1397395933632659466/animal-6814871_1280.png?ex=688191e0&is=68804060&hm=b7d7143e4ededd4f2528517af364723d733b3cc496c77607c015f423d2ba7609" width="150" height="250"> |
-
-
-
-
-
 
 
 
@@ -81,7 +75,7 @@
 ## 🎯 프로젝트 필요성
 
 
-# 기술 스택
+## 기술 스택
 <img src="https://img.shields.io/badge/Python-3776AB?style=plastic&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/pandas-150458?style=plastic&logo=pandas&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=plastic&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=plastic&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/numpy-013243?style=plastic&logo=numpy&logoColor=white"> <img src="https://img.shields.io/badge/matplotlib-11557c?style=plastic&logo=matplotlib&logoColor=white"> <img src="https://img.shields.io/badge/seaborn-0C5A5A?style=plastic&logoColor=white"><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=plastic&logo=scikit-learn&logoColor=white">
 
 
@@ -91,7 +85,15 @@
 https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_source=perplexity
 
 ## 데이터 전처리 & EDA
-### 전처
+### 1차 전처리
+1. 1980 ~ 2025년까지의 연도별 CSV 파일을 반복적으로 불러와 하나의 데이터셋으로 병합
+2. 문자열 형식의 상영시간을 숫자형으로 Duration_minute 컬럼으로 변환 (예: '2h 4m' → 124)
+3. MPA, Rating, Votes 컬럼 중 결측치가 존재하는 행 제거
+   3.1. MPA: 범주형이고 영화 시나리오에 기반하여 등급이 결정되기 때문에 임의로 값 부여 불가
+   3.2. Rating, Votes: 타겟 임의지표 (popularity_score)를 만들 때 사용하기 때문에 임의 값 부여 불가
+4. 불필요한 컬럼 제거 (매출 같은 후천적인 요소나 의미 분석을 해야하는 영화 설명 부분)
+5. Votes 정수로 변환 (예: 886K -> 886000, 1.3M -> 1300000)
+6. budget 컬럼 환율 변환 (다양한 통화 기호를 파악하고 USD 기준으로 환산)
 
 
 ## 예측 모델 결과
