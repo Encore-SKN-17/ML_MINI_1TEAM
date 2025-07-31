@@ -96,7 +96,11 @@ https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_sou
 8. 타겟 지표인 popularity_score 열 계산 후 추가
 
 ### EDA
-<img src="./EDA_images/distribution_popularity_score.png" >
+<img src="./EDA_images/distribution_popularity_score.png" >  
+<img src="./EDA_images/distribution_popularity_score_log.png" >  
+<img src="./EDA_images/avg_popularity_MPA.png">  
+<img src="./EDA_images/avg_popularity_genre.png">  
+<img src="./EDA_images\numeric_heatmap.png">
 
 
 
