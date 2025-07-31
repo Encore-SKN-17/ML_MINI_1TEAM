@@ -51,14 +51,11 @@
 
 ## 출처
   
-  (1): Arcelus, F. J., & Srinivasan, G. (2020). Predicting box-office revenues of motion pictures. Journal of the Operational Research Society, 71(3), 364–378.
-  🔗 https://doi.org/10.1080/01605682.2019.1574199
-
-  (2):  Analytis, P. P., Barkoczi, D., & Herzog, S. M. (2018). Social learning strategies for matters of taste. Nature Human Behaviour, 2(6), 415–424.
-  🔗 https://doi.org/10.1038/s41562-018-0333-2
-
-  (3):  Sharda, R., & Delen, D. (2006). Predicting box-office success of motion pictures with neural networks. Expert Systems with Applications, 30(2), 243–254.
-  🔗 https://doi.org/10.1016/j.eswa.2005.07.019
+  (1): Arcelus, F. J., & Srinivasan, G. (2020). Predicting box-office revenues of motion pictures. Journal of the Operational Research Society, 71(3).
+  
+  (2):  Analytis, P. P., Barkoczi, D., & Herzog, S. M. (2018). Social learning strategies for matters of taste. Nature Human Behaviour, 2(6).
+  
+  (3):  Sharda, R., & Delen, D. (2006). Predicting box-office success of motion pictures with neural networks. Expert Systems with Applications, 30(2).
 
 </div>
 
