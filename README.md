@@ -97,12 +97,12 @@ https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_sou
 
 ### EDA
 <img src="./EDA_images/distribution_popularity_score.png" >  
-<선형 스케일> <br>
+선형 스케일: <br>
 - 극단적인 오른쪽 꼬리(long tail): 대부분의 영화가 낮은 인기도 점수에 몰려 있고, 소수의 영화만이 매우 높은 인기도 점수를 가지고 있음.
 - 심각한 오른쪽 왜도: 데이터가 왼쪽에 밀집되어 있고 오른쪽으로 길게 늘어져 있어 평균값만으로는 대표성을 설명하기 어려움.
 - 상위 인기 영화의 영향이 큼: 소수의 인기 영화가 전체 분포에 큰 영향을 미치는 것을 보임.
 <img src="./EDA_images/distribution_popularity_score_log.png" > 
-<로그 스케일> <br>
+<로그 스케일> 
 - 정규분포에 가까운 형태: 로그 변환 후에는 인기도 점수가 중심을 기준으로 대칭적인 종형 곡선을 보임
 - 해석 용이성 증가: 로그 변환을 통해 이상치의 영향을 줄이고, 대부분의 영화 인기도 패턴을 더 잘 관찰할 수 있음
 - **모델링 준비 완료: 이처럼 정규화된 분포는 이후 회귀 분석에 용이**
