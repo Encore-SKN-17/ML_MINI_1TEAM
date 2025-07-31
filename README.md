@@ -85,13 +85,16 @@
 https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_source=perplexity
 
 ## 데이터 전처리 & EDA
-### 1차 전처리
+### 전처리
 1. 1980 ~ 2025년까지의 연도별 CSV 파일을 반복적으로 불러와 하나의 데이터셋으로 병합
 2. 문자열 형식의 상영시간을 숫자형으로 Duration_minute 컬럼으로 변환 (예: '2h 4m' → 124)
-3. MPA, Rating, Votes 컬럼 중 결측치가 존재하는 행 제거 (상영등급은 범주형이고 영화 시나리오에 기반하여 등급이 결정되기 때문에 임의로 값 부여 불가, Rating과 Votes는 타겟 임의지표 (popularity_score)를 만들 때 사용하기 때문에 임의 값 부여 불가
+3. MPA, Rating, Votes 컬럼 중 결측치가 존재하는 행 제거 => 상영등급은 범주형이고 영화 시나리오에 기반하여 등급이 결정되기 때문에 임의로 값 부여 불가, Rating과 Votes는 타겟 임의지표 (popularity_score)를 만들 때 사용하기 때문에 임의 값 부여 불가
 4. 불필요한 컬럼 제거 (매출 같은 후천적인 요소나 의미 분석을 해야하는 영화 설명 부분)
 5. Votes 정수로 변환 (예: 886K -> 886000, 1.3M -> 1300000)
 6. budget 컬럼 환율 변환 (다양한 통화 기호를 파악하고 USD 기준으로 환산)
+
+### EDA
+
 
 
 ## 예측 모델 결과
