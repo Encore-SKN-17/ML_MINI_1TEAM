@@ -144,7 +144,8 @@ Sci-Fi, Adventure, Action, Fantasy, Animation 장르가 상대적으로 높은 �
 | RMSLE    | 0.1664       | 0.1731       |
 | R²       | 0.3124       | 0.2470       |
 
-<성능 향상 단계>
+<성능 향상 단계>  
+
 0. 장르 및 상영등급 One-Hot Encoding 적용
 1. 원본 데이터 상태에서 학습 [R²: -0.075(학습),  -0.066(평가)]
 2. popularity_score를 로그 스케일로 변환 [R²: 0.189(학습),  0.183(평가)] 
