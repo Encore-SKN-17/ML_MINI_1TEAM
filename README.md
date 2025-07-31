@@ -133,7 +133,7 @@ Sci-Fi, Adventure, Action, Fantasy, Animation 장르가 상대적으로 높은 �
 ### LightGBM
 
 
-### SVM (한훈)
+### SVM 
 **<최고 성능 결과>**
 | 지표     | 훈련 데이터 | 평가 데이터 |
 |----------|--------------|--------------|
@@ -148,7 +148,7 @@ Sci-Fi, Adventure, Action, Fantasy, Animation 장르가 상대적으로 높은 �
 
 0. 장르 및 상영등급 One-Hot Encoding 적용
 1. 원본 데이터 상태에서 학습 [R²: -0.075(학습),  -0.066(평가)]
-2. popularity_score를 로그 스케일로 변환 [R²: 0.189(학습),  0.183(평가)] 
+2. popularity_score를 로그 스케일로 변환 [R²: 0.189(학습),  0.183(평가)] (아주 큰 성능 향상을 보였음)
 3. GridSearchCV 적용 [이전 단계와 거의 동일한 성능을 보임] (최적의 파라미터: C=1, epsilon=0.1, kernel= 'rbf')
 
 
