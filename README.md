@@ -19,8 +19,6 @@
 
 
 
-
-
 ---
 
 ## 🗓️ (Mini)프로젝트 기간
@@ -41,19 +39,12 @@
 
 ### 📊 Votes × Rating 지표 기반 예측
 
-| 영화 | Votes (투표 수) | Rating (평점) | Votes × Rating |
+| 영화 | Votes (투표 수) | Rating (평점) | poularity_score (=Votes × Rating) |
 |------|------------------|----------------|----------------|
 | B    | 150,000          | 6.0            | 900,000        |
 | D    | 64,000           | 8.0            | 512,000        |
 | A    | 82,000           | 5.0            | 410,000        |
 | C    | 39,000           | 7.0            | 273,000        |
-
-
-  ### Votes × Rating 그래프 (텍스트 바 차트)
- 1. 영화 B: ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 900,000
- 2. 영화 D: ▓▓▓▓▓▓▓▓▓▓▓▓        512,000
- 3. 영화 A: ▓▓▓▓▓▓▓▓            410,000
- 4. 영화 C: ▓▓▓▓▓               273,000
 
 
 - 이 지수는 단순한 직관을 넘어 실무 분석에서 널리 활용되며, 흥행 예측 모델에서 중요한 변수로 사용되고 있다.
@@ -96,25 +87,31 @@ https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_sou
 8. 타겟 지표인 popularity_score 열 계산 후 추가
 
 ### EDA
-<img src="./EDA_images/distribution_popularity_score.png" >  
-선형 스케일: <br>
-- 극단적인 오른쪽 꼬리(long tail): 대부분의 영화가 낮은 인기도 점수에 몰려 있고, 소수의 영화만이 매우 높은 인기도 점수를 가지고 있음  
-- 심각한 오른쪽 왜도: 데이터가 왼쪽에 밀집되어 있고 오른쪽으로 길게 늘어져 있어 평균값만으로는 대표성을 설명하기 어려움  
+
+<img src="./EDA_images/distribution_popularity_score.png">  
+
+선형 스케일 popularity_score:
+- 대부분의 영화가 낮은 인기도 점수에 몰려 있고, 소수의 영화만이 매우 높은 인기도 점수를 가지고 있음  
+- 데이터가 왼쪽에 밀집되어 있고 오른쪽으로 길게 늘어져 있어 평균값만으로는 대표성을 설명하기 어려움  
 - 상위 인기 영화의 영향이 큼: 소수의 인기 영화가 전체 분포에 큰 영향을 미치는 것을 보임  
 
-<img src="./EDA_images/distribution_popularity_score_log.png" > 
-<로그 스케일> 
-- 정규분포에 가까운 형태: 로그 변환 후에는 인기도 점수가 중심을 기준으로 대칭적인 종형 곡선을 보임  
-- 해석 용이성 증가: 로그 변환을 통해 이상치의 영향을 줄이고, 대부분의 영화 인기도 패턴을 더 잘 관찰할 수 있음  
-- **모델링 준비 완료: 이처럼 정규화된 분포는 이후 회귀 분석에 용이**
+<img src="./EDA_images/distribution_popularity_score_log.png"> 
+
+로그 스케일 popularity_score:
+- 로그 변환 후에는 인기도 점수가 중심을 기준으로 대칭적인 정규분포를 보임 => **회귀 분석에 용이**
+- 로그 변환을 통해 이상치의 영향을 줄이고, 대부분의 영화 인기도 패턴을 더 잘 관찰할 수 있음  
+- **모델링 준비 완료: 이처럼 정규화된 분포는 이후 
   
 <img src="./EDA_images/avg_popularity_MPA.png"> 
+
 PG-13, G, NC-17, Approved 등급에서 비교적 높은 인기도를 보이며, 특히 PG-13이 가장 높은 평균 값을 기록함. 반면, X, TV-Y7-FV, M, TV-G 등 일부 등급은 인기도가 매우 낮음. 전반적으로 등급에 따라 인기도에 차이가 나타나며, **MPA 등급은 popularity_score와 유의미한 연관이 있는 변수임을 알 수 있음. 다만, 일부 등급은 표본 수가 적어 보이는 편차가 클 수 있으므로 해석 시 주의가 필요함.**
 
 <img src="./EDA_images/avg_popularity_genre.png">  
+
 Sci-Fi, Adventure, Action, Fantasy, Animation 장르가 상대적으로 높은 인기도를 보이는 반면, Game Show, News, Documentary는 낮은 인기도를 기록함. 장르에 따라 인기도에 뚜렷한 차이가 존재하므로, **장르는 popularity_score와 유의미한 연관이 있는 변수임을 알 수 있음**.
 
 <img src="./EDA_images\numeric_heatmap.png">
+
 - Votes와 Rating은 popularity_score를 계산할 때 사용한 수치들이므로 제외  
 - info()로 확인 결과, budget은 결측치가 반이나 되고 예산은 배우들 섭외 비용 혹은 제작 비용에 영향을 미치는 간접적 요소라서 **학습 시 특성에서 제외시키는 것이 타당**
 
