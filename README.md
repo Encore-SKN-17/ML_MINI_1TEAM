@@ -92,6 +92,8 @@ https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_sou
 4. 불필요한 컬럼 제거 (매출 같은 후천적인 요소나 의미 분석을 해야하는 영화 설명 부분)
 5. Votes 정수로 변환 (예: 886K -> 886000, 1.3M -> 1300000)
 6. budget 컬럼 환율 변환 (다양한 통화 기호를 파악하고 USD 기준으로 환산)
+7. 다중 장르 IMBd가 지정한 공식 장르에 부합하는 장르만 추출
+8. 타겟 지표인 popularity_score 열 계산 후 추가
 
 ### EDA
 
