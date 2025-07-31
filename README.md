@@ -78,19 +78,7 @@
 
 
 ## 🎯 프로젝트 필요성
-영화 산업에서 흥행 예측의 중요성 및 최신 동향 요약
 
-기존에는 제작비, 유명 배우 등 단편적 지표로 흥행을 예측했지만, 이는 정확도에 한계가 있었습니다. 최근 연구에 따르면 장르 선호도, 서사적 친숙성, 출연진·감독 인지도, 예고편 조회수, SNS 언급량 등 대중성 지표가 흥행에 결정적 영향을 미칩니다.
-
-장르, 배급사, 프랜차이즈 여부, 검색 데이터 등을 결합한 선형 회귀 모델은 개봉 4주 전 기준 94% 예측 정확도를 달성함.
-
-SNS·유튜브 기반 분석 모델은 77% 이상 분류 정확도를 기록.
-
-Transformer 기반 딥러닝 모델은 예측 오차를 10% 이하로 낮춤.
-
-결론적으로, 감에 의존한 방식보다 데이터 기반 정량 분석이 영화 흥행 예측에 훨씬 효과적이며, 이는 투자 판단, 마케팅 전략, 산업 경쟁력 제고에 핵심적인 역할을 합니다.
-
-1. 출처: com.miami.edu, researchgate.net, frontiersin.org
 
 # 기술 스택
 <img src="https://img.shields.io/badge/Python-3776AB?style=plastic&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/pandas-150458?style=plastic&logo=pandas&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=plastic&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=plastic&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/numpy-013243?style=plastic&logo=numpy&logoColor=white"> <img src="https://img.shields.io/badge/matplotlib-11557c?style=plastic&logo=matplotlib&logoColor=white"> <img src="https://img.shields.io/badge/seaborn-0C5A5A?style=plastic&logoColor=white">
