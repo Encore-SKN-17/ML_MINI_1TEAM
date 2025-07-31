@@ -1,6 +1,6 @@
 <!-- 주제: 왼쪽 정렬, 두 번째 크기 -->
 <div align="center">
-  <h1>머신러닝을 활용 한 대중성 예측</h1>
+  <h1>머신러닝을 활용 한 영화의 대중성 예측</h1>
 </div>
 
 <!-- 팀 소개: 왼쪽 정렬 -->
@@ -16,7 +16,7 @@
 
 | [김주서](https://github.com/kimjuseo71) | [홍문봉](https://github.com/Glowcloudy) | [양정민](https://github.com/Yangmin3) | [한 훈](https://github.com/Hoonieboogie) | [김주영](https://github.com/samkim7788) |
 |:--------------------------------------:|:--------------------------------------:|:-------------------------------------:|:---------------------------------------:|:---------------------------------------:|
-| <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397415348168294500/370391fd-2fe0-4a83-a79a-2e462210fb35.png?ex=6881a3f5&is=68805275&hm=07c0fcb9b46efe06fc254dc8afda222f6500183de06e7959a3b7749620a79c00" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1395586816832438434/1397515149916770355/f47b8916bae6fe04.jpg?ex=688200e8&is=6880af68&hm=178c39ec3e7fdbbbd5168b803f0aabc823a2c4354cff11a37d3d489663e70843" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397420134108499988/01f607c7-1561-4973-bf47-038a40ecd0f7.png?ex=6882f9ea&is=6881a86a&hm=ddbddf82df66befb38a0a710029e85c2784c04d990db359d23c21eb8240bad8d" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397424014686818425/3f02d83d-8363-45c2-9a5e-fd488063d006.png?ex=6881ac07&is=68805a87&hm=9af426f52fed283f64867cc1f8f25d4a35f2aa08d5af1feb96ca1c78db59efda" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1395586816832438434/1397395933632659466/animal-6814871_1280.png?ex=688191e0&is=68804060&hm=b7d7143e4ededd4f2528517af364723d733b3cc496c77607c015f423d2ba7609" width="150" height="250"> |
+| <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397415348168294500/370391fd-2fe0-4a83-a79a-2e462210fb35.png?ex=6881a3f5&is=68805275&hm=07c0fcb9b46efe06fc254dc8afda222f6500183de06e7959a3b7749620a79c00" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1395586816832438434/1400378419052679258/resized_150x252.jpg?ex=688c6b88&is=688b1a08&hm=5bf0b83859037d36f9a104cec36f12661e1801e6e9a014e8f1dc599f576be489&" width="150" height="250">| <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397420134108499988/01f607c7-1561-4973-bf47-038a40ecd0f7.png?ex=6882f9ea&is=6881a86a&hm=ddbddf82df66befb38a0a710029e85c2784c04d990db359d23c21eb8240bad8d" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1390125153542869159/1397424014686818425/3f02d83d-8363-45c2-9a5e-fd488063d006.png?ex=6881ac07&is=68805a87&hm=9af426f52fed283f64867cc1f8f25d4a35f2aa08d5af1feb96ca1c78db59efda" width="150" height="250"> | <img src="https://cdn.discordapp.com/attachments/1395586816832438434/1397395933632659466/animal-6814871_1280.png?ex=688191e0&is=68804060&hm=b7d7143e4ededd4f2528517af364723d733b3cc496c77607c015f423d2ba7609" width="150" height="250"> |
 
 
 
@@ -38,40 +38,55 @@
 
 ## 📌 프로젝트 배경
 
-1. 많은 공개 영화 데이터셋에서는 관람객 수나 박스오피스 수익과 같은 직접적인 대중성 지표가 포함되어 있지 않다.
-   이에 따라 연구자들과 분석가들은 사용자 평점과 투표 수를 결합한 지표(Votes × Rating)를 활용해 대중성을 간접적으로 추정하는 방법을 자주 사용한다.
+- 많은 공개 영화 데이터셋에서는 관람객 수나 박스오피스 수익과 같은 직접적인 대중성 지표가 포함되어 있지 않다.
+   대중성은 도달 범위(평가 참여 인원- Votes)와 만족도(평균 평점- Rating)의 곱으로 설명할 수 있다. 평가 수는 관심도, 평균 평점은 만족도를 나타내며, 많은 사람이 보고 긍정적으로 평가한 영화일수록 대중성이 높다.
+   행동 과학 연구에서도 사람들이 콘텐츠 선택 시 이 두 요소를 함께 고려한다는 점이 확인되었다.
 
-2. 대중성은 도달 범위(평가 참여 인원)와 만족도(평균 평점)의 곱으로 설명할 수 있다. 평가 수는 관심도, 평균 평점은 만족도를 나타내며, 많은 사람이 보고 긍정적으로 평가한 영화일수록 대중성이 높다.
-  행동 과학 연구에서도 사람들이 콘텐츠 선택 시 이 두 요소를 함께 고려한다는 점이 확인되었다.
 
-3. 우리는 투표 수와 평균 평점을 곱하여, 영화의 가시성과 선호도를 동시에 반영하는 대중성 지수를 생성하였다.
-  이 지수는 단순한 직관을 넘어 학술 연구와 실무 분석에서 널리 활용되며, 흥행 예측 모델이나 데이터 분석 대회에서도 중요한 변수로 사용되고 있다.
 
-출처(1): Arcelus, F. J., & Srinivasan, G. (2020). Predicting box-office revenues of motion pictures. Journal of the Operational Research Society, 71(3), 364–378.
-🔗 https://doi.org/10.1080/01605682.2019.1574199
 
-출처(2):  Analytis, P. P., Barkoczi, D., & Herzog, S. M. (2018). Social learning strategies for matters of taste. Nature Human Behaviour, 2(6), 415–424.
-🔗 https://doi.org/10.1038/s41562-018-0333-2
+### 📊 Votes × Rating 지표 기반 예측 (두 가지 가정 비교)
 
-출처(3):  Sharda, R., & Delen, D. (2006). Predicting box-office success of motion pictures with neural networks. Expert Systems with Applications, 30(2), 243–254.
-🔗 https://doi.org/10.1016/j.eswa.2005.07.019
+| 영화 | Votes × Rating | 가정 1: 평점 고정 (8.0) → 예상 Votes | 가정 2: Votes 고정 (50,000) → 예상 평점 |
+|:----:|:---------------:|:--------------------------:|:----------------------------:|
+| 영화 B | 900,000 | 112,500 | 18.0 |
+| 영화 D | 512,000 | 64,000 | 10.24 |
+| 영화 A | 410,000 | 51,250 | 8.2 |
+| 영화 C | 273,000 | 34,125 | 5.46 |
+
+  ### Votes × Rating 그래프 (텍스트 바 차트)
+ 1. 영화 B: ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 900,000
+ 2. 영화 D: ▓▓▓▓▓▓▓▓▓▓▓▓        512,000
+ 3. 영화 A: ▓▓▓▓▓▓▓▓            410,000
+ 4. 영화 C: ▓▓▓▓▓               273,000
+
+
+- 이 지수는 단순한 직관을 넘어 실무 분석에서 널리 활용되며, 흥행 예측 모델에서 중요한 변수로 사용되고 있다.
+
+## 출처
+  
+  (1): Arcelus, F. J., & Srinivasan, G. (2020). Predicting box-office revenues of motion pictures. Journal of the Operational Research Society, 71(3), 364–378.
+  🔗 https://doi.org/10.1080/01605682.2019.1574199
+
+  (2):  Analytis, P. P., Barkoczi, D., & Herzog, S. M. (2018). Social learning strategies for matters of taste. Nature Human Behaviour, 2(6), 415–424.
+  🔗 https://doi.org/10.1038/s41562-018-0333-2
+
+  (3):  Sharda, R., & Delen, D. (2006). Predicting box-office success of motion pictures with neural networks. Expert Systems with Applications, 30(2), 243–254.
+  🔗 https://doi.org/10.1016/j.eswa.2005.07.019
 
 </div>
 
 
 ## 🎯 프로젝트 필요성
 
-일반인들의 평점과 
 
 # 기술 스택
 <img src="https://img.shields.io/badge/Python-3776AB?style=plastic&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/pandas-150458?style=plastic&logo=pandas&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=plastic&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=plastic&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/numpy-013243?style=plastic&logo=numpy&logoColor=white"> <img src="https://img.shields.io/badge/matplotlib-11557c?style=plastic&logo=matplotlib&logoColor=white"> <img src="https://img.shields.io/badge/seaborn-0C5A5A?style=plastic&logoColor=white">
 
 
 ## 데이터 출처
-- [음악](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks) (Spotify Music From 1921 to 2020)
 
-- [영화](https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_source=perplexity) (IMDB Movies From 1920 to 2025)
-
+https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023?utm_source=perplexity
 
 ## ✅ 1차 전처리: 기본 정제
 ### 1. 불필요 컬럼 제거
